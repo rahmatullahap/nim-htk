@@ -1,0 +1,3 @@
+data/train/sig/12615050_sari.sig    data/train/mfcc/12615050_sari.mfcc
+data/train/sig/12615050_insan.sig    data/train/mfcc/12615050_insan.mfcc
+data/train/sig/12615050_rahmat.sig    data/train/mfcc/12615050_rahmat.mfcc
