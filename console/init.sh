@@ -1,0 +1,7 @@
+HInit -A -D –T 1 -S trainlist.txt -M model/hmm0 -H model/proto/hmm_sil -l label -L data/train/lab/ sil
+HInit -A -D –T 1 -S trainlist.txt -M model/hmm0 -H model/proto/hmm_satu -l label -L data/train/lab/ satu 
+HInit -A -D –T 1 -S trainlist.txt -M model/hmm0 -H model/proto/hmm_dua -l label -L data/train/lab/ dua 
+HInit -A -D –T 1 -S trainlist.txt -M model/hmm0 -H model/proto/hmm_lima -l label -L data/train/lab/ lima 
+HInit -A -D –T 1 -S trainlist.txt -M model/hmm0 -H model/proto/hmm_enam -l label -L data/train/lab/ enam 
+HInit -A -D –T 1 -S trainlist.txt -M model/hmm0 -H model/proto/hmm_nol -l label -L data/train/lab/ nol 
+
