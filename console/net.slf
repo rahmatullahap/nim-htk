@@ -1,0 +1,35 @@
+VERSION=1.0
+N=11   L=22   
+I=0    W=SIL                 
+I=1    W=NOL                 
+I=2    W=!NULL               
+I=3    W=ENAM                
+I=4    W=LIMA                
+I=5    W=DUA                 
+I=6    W=SATU                
+I=7    W=SIL                 
+I=8    W=!NULL               
+I=9    W=!NULL               
+I=10   W=!NULL               
+J=0     S=0    E=0    
+J=1     S=2    E=0    
+J=2     S=2    E=1    
+J=3     S=8    E=1    
+J=4     S=1    E=2    
+J=5     S=3    E=2    
+J=6     S=4    E=2    
+J=7     S=5    E=2    
+J=8     S=6    E=2    
+J=9     S=2    E=3    
+J=10    S=8    E=3    
+J=11    S=2    E=4    
+J=12    S=8    E=4    
+J=13    S=2    E=5    
+J=14    S=8    E=5    
+J=15    S=2    E=6    
+J=16    S=8    E=6    
+J=17    S=8    E=7    
+J=18    S=7    E=8    
+J=19    S=10   E=8    
+J=20    S=0    E=9    
+J=21    S=2    E=9    

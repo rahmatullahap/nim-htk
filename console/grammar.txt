@@ -1,0 +1,2 @@
+$digit =SATU|DUA|LIMA|ENAM|NOL;
+({SIL} < $digit > {SIL})
