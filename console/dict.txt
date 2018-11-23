@@ -1,7 +1,6 @@
-SATU      [satu]  satu 
-DUA         [dua]   dua 
-LIMA      [lima]  lima 
-ENAM         [enam]   enam
-NOL         [nol]   nol
-SIL         [sil]   sil
-
+SATU [satu] satu 
+DUA [dua] dua 
+LIMA [lima] lima 
+ENAM [enam] enam
+NOL [nol] nol
+SIL [sil] sil

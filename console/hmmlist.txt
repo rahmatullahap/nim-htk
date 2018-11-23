@@ -1,0 +1,6 @@
+model/hmm1/hmm_satu 
+model/hmm1/hmm_dua 
+model/hmm1/hmm_lima 
+model/hmm1/hmm_enam 
+model/hmm1/hmm_nol 
+model/hmm1/hmm_sil
