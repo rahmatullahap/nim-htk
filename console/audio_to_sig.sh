@@ -37,7 +37,7 @@ for f in data/train/raw/*.wav; do
         NEW_FILE_NAME="${f/\/raw\//\/sig\/}"
         NEW_FILE_NAME="${NEW_FILE_NAME/%\.wav/\.sig}"
         echo $NEW_FILE_NAME
-        HCopy -C hcopy.conf "$f" "$NEW_FILE_NAME"
+        HCopy -C config.conf "$f" "$NEW_FILE_NAME"
     fi
 done
 
