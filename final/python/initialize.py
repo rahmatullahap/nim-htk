@@ -33,7 +33,7 @@ trainlist_lines = []
 
 for filename in os.listdir(sig_directory):
     if filename.endswith('.sig'):
-        filename_without_ext = filename.rstrip('.sig')
+        filename_without_ext = filename.replace('.sig','')
         
         mfcc_filename = mfcc_directory.lstrip('./') + filename_without_ext + '.mfcc'
         sig_filename = sig_directory.lstrip('./') + filename
