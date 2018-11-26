@@ -115,3 +115,7 @@ for label in unique_labels:
         for line in proto_content_lines[1:]:
             outfile.write(line + '\n')
     
+
+mfccexist = os.path.isdir("data/train/mfcc")
+if mfccexist is not True:
+	os.mkdir("data/train/mfcc")
