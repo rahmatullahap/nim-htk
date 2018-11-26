@@ -10,9 +10,9 @@ for f in model/proto/hmm_*; do
     # Train [0]
     if [ -f "$f" ]
     then
-        LABEL="${f/model\/proto\/hmm_/}"
+        LABEL=`echo $f | sed 's/model\/proto\/hmm_//'`
         echo $LABEL
-        HInit -A -D -T 1 -S txt/trainlist.txt -M model/hmm0 -H $f -l $LABEL -L data/train/lab/ $LABEL
+        HInit -A -D -T 1 -S txt/trainlist.txt -M model/hmm0 -H $f -L data/train/lab/ $LABEL
     fi
 done
 
