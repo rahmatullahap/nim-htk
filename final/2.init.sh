@@ -12,7 +12,7 @@ for f in model/proto/hmm_*; do
     then
         LABEL="${f/model\/proto\/hmm_/}"
         echo $LABEL
-        HInit -A -D -T 1 -S trainlist.txt -M model/hmm0 -H $f -l $LABEL -L data/train/lab/ $LABEL
+        HInit -A -D -T 1 -S txt/trainlist.txt -M model/hmm0 -H $f -l $LABEL -L data/train/lab/ $LABEL
     fi
 done
 

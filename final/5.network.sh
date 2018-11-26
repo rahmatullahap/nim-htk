@@ -1,2 +1,2 @@
-HParse -A -D -T -C config2.conf 1 grammar.txt net.slf &&
-HSGen -A -D -C config2.conf -n 100 -s net.slf dict.txt
+HParse -A -D -T -C config/config2.conf 1 txt/grammar.txt output/net.slf &&
+HSGen -A -D -C config/config2.conf -n 100 -s output/net.slf txt/dict.txt

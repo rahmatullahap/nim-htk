@@ -1,1 +1,1 @@
-HCopy -A -D -C analysis.conf -S targetlist.txt
+HCopy -A -D -C config/analysis.conf -S txt/targetlist.txt
