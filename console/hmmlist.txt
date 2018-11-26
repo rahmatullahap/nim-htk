@@ -1,6 +1,16 @@
 satu
 dua
+tiga
+empat
 lima
 enam
+tujuh
+delapan
+sembilan
 nol
+sepuluh
+sebelas
+belas
+puluh
+kosong
 sil
