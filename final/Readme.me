@@ -1,2 +1,16 @@
+# Convert Audio file to sig
+sh audio_to_sig
+
+# Labeling manually & Put Lab file data/train/lab
+
+# Normalize if labeling use audacity
+py python/norm_lab_files_from_audacity.py
+
+# Initiialize
+py initialize.py
+
 # Run From Analysis to Network
 sh start.sh
+
+# Recognition
+sh recognition.sh
