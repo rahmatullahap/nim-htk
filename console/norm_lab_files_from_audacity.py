@@ -1,7 +1,7 @@
 import os
 import fileinput
 
-directory = './data/train/lab/'
+directory = './data/train/lab/txt/'
 for filename in os.listdir(directory):
     complete_filename = os.path.join(directory, filename)
     
@@ -29,3 +29,4 @@ for filename in os.listdir(directory):
         with open(complete_filename, 'w') as outfile:
             for line in replace_line_array:
                 outfile.write(line)
+print("berhasil")
