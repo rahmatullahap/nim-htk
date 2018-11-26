@@ -10,3 +10,6 @@ data/train/sig/12615050_3_sari.sig    data/train/mfcc/12615050_3_sari.mfcc
 data/train/sig/13106013_1_insan.sig    data/train/mfcc/13106013_1_insan.mfcc
 data/train/sig/13106013_2_insan.sig    data/train/mfcc/13106013_2_insan.mfcc
 data/train/sig/13106013_3_insan.sig    data/train/mfcc/13106013_3_insan.mfcc
+data/train/sig/13106013_1_rahmat.sig    data/train/mfcc/13106013_1_rahmat.mfcc
+data/train/sig/13106013_2_rahmat.sig    data/train/mfcc/13106013_2_rahmat.mfcc
+data/train/sig/13106013_3_rahmat.sig    data/train/mfcc/13106013_3_rahmat.mfcc
