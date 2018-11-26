@@ -61,6 +61,15 @@ with open(trainlist_filename, 'w') as outfile:
 print ('> BUILD MODEL PROTO...')
 proto_directory = './model/proto/'
 
+modelexist = os.path.isdir("model")
+if modelexist is not True:
+	os.mkdir("model")
+
+protoexist = os.path.isdir("model/proto")
+if protoexist is not True:
+	os.mkdir("model/proto")
+
+
 default_proto_content = """
 ~o <VecSize> 39 <MFCC_0_D_A>
 ~h "${label_name}"
