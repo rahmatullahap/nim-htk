@@ -11,8 +11,8 @@ for f in model/proto/hmm_*; do
     if [ -f "$f" ]
     then
         LABEL=`echo $f | sed 's/model\/proto\/hmm_//'`
-        echo $LABEL
         HCompV -A -D -T 1 -C config/config2.conf -S txt/trainlist.txt -M model/hmm0flat -H $f -f 0.01 $LABEL
+        echo "HCompV -A -D -T 1 -S txt/trainlist.txt -M model/hmm0flat -H ${f} -l ${LABEL} -f 0.01 ${LABEL}"
     fi
 done
 # HCompV -A -D -T 1 -C config/config2.conf -S txt/trainlist.txt -M model/hmm0flat -H model/proto/hmm_sil -f 0.01 sil
