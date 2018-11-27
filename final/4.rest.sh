@@ -17,7 +17,7 @@ for i in $(seq 1 $ITERATION); do
         # Train [0]
         if [ -f "$f" ]
         then
-            LABEL="${f/model\/proto\/hmm_/}"
+            LABEL=`echo $f | sed 's/model\/proto\/hmm_//'`
             echo "HRest -A -D -T 1 -C config/config2.conf -S txt/trainlist.txt -M  ${MODEL_FOLDER} -H ${PREV_MODEL_FOLDER}/hmm_${LABEL} -L data/train/lab ${LABEL}" 
             HRest -A -D -T 1 -C config/config2.conf -S txt/trainlist.txt -M $MODEL_FOLDER -H "${PREV_MODEL_FOLDER}/hmm_${LABEL}" -L data/train/lab/ $LABEL
         fi
