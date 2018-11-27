@@ -1,0 +1,15 @@
+data/test/sig/12615050_2_rahmat.sig data/test/mfcc/12615050_2_rahmat.mfcc
+data/test/sig/12615050_3_sari.sig data/test/mfcc/12615050_3_sari.mfcc
+data/test/sig/13106013_2_insan.sig data/test/mfcc/13106013_2_insan.mfcc
+data/test/sig/23511089_1_rahmat.sig data/test/mfcc/23511089_1_rahmat.mfcc
+data/test/sig/23511089_2_sari.sig data/test/mfcc/23511089_2_sari.mfcc
+data/test/sig/23517046_2_insan.sig data/test/mfcc/23517046_2_insan.mfcc
+data/test/sig/33517010_1_rahmat.sig data/test/mfcc/33517010_1_rahmat.mfcc
+data/test/sig/33517010_2_sari.sig data/test/mfcc/33517010_2_sari.mfcc
+data/test/sig/33517010_3_insan.sig data/test/mfcc/33517010_3_insan.mfcc
+data/test/sig/Annisa_1_2.sig data/test/mfcc/Annisa_1_2.mfcc
+data/test/sig/Annisa_2_3.sig data/test/mfcc/Annisa_2_3.mfcc
+data/test/sig/Annisa_3_1.sig data/test/mfcc/Annisa_3_1.mfcc
+data/test/sig/Novinda_1_3.sig data/test/mfcc/Novinda_1_3.mfcc
+data/test/sig/Novinda_4_1.sig data/test/mfcc/Novinda_4_1.mfcc
+data/test/sig/Novinda_5_2.sig data/test/mfcc/Novinda_5_2.mfcc
