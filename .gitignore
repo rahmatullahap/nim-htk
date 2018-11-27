@@ -3,6 +3,8 @@ final/output/*
 final/model/*
 final/txt/trainlist.txt
 final/txt/targetlist.txt
+final/txt/testinglist.txt
+final/txt/testlist.txt
 final/data/train/mfcc
 final/mmf/*
 *.swp
