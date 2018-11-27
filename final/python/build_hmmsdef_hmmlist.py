@@ -18,7 +18,7 @@ hmmlist_content = []
 
 for filename in os.listdir(model_directory + last_model):
     if 'hmm_' in filename:
-        print filename
+        print(filename)
         file_path = model_directory + last_model + '/' + filename
         get_header = len(hmmsdef_content) > 0
         
@@ -28,7 +28,7 @@ for filename in os.listdir(model_directory + last_model):
         with open(file_path) as file:
             i = 0
             for line in file:
-               
+
                 if i > 2:
                     hmmsdef_content.append(line)
                 else:

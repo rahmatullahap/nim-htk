@@ -4,4 +4,5 @@ final/model/*
 final/txt/trainlist.txt
 final/txt/targetlist.txt
 final/data/train/mfcc
+final/mmf/*
 *.swp

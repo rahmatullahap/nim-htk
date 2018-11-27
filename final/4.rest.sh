@@ -18,8 +18,8 @@ for i in $(seq 1 $ITERATION); do
         if [ -f "$f" ]
         then
             LABEL="${f/model\/proto\/hmm_/}"
-            echo "HRest -A -D -T 1 -C config/config2.conf -S txt/trainlist.txt -M  ${MODEL_FOLDER} -H model/hmm0flat/vFloors -H ${PREV_MODEL_FOLDER}/hmm_${LABEL} -L data/train/lab ${LABEL}" 
-            # HRest -A -D -T 1 -C config/config2.conf -S txt/trainlist.txt -M $MODEL_FOLDER -H model/hmm0flat/vFloors -H "${PREV_MODEL_FOLDER}/hmm_${LABEL}" -L data/train/lab/ $LABEL
+            echo "HRest -A -D -T 1 -C config/config2.conf -S txt/trainlist.txt -M  ${MODEL_FOLDER} -H ${PREV_MODEL_FOLDER}/hmm_${LABEL} -L data/train/lab ${LABEL}" 
+            HRest -A -D -T 1 -C config/config2.conf -S txt/trainlist.txt -M $MODEL_FOLDER -H "${PREV_MODEL_FOLDER}/hmm_${LABEL}" -L data/train/lab/ $LABEL
         fi
     done
 done
