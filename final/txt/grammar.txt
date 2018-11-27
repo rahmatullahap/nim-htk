@@ -1,5 +1,6 @@
 $digit =SATU|DUA|TIGA|EMPAT|LIMA|ENAM|TUJUH|DELAPAN|SEMBILAN|SEPULUH|SEBELAS|BELAS|PULUH|NOL|KOSONG;
 $first_letter =SATU|DUA|TIGA;
-$second_letter =SATU|DUA|TIGA|EMPAT|LIMA|ENAM|TUJUH|DELAPAN|SEMBILAN;
-$third_letter =SATU|DUA|TIGA|EMPAT|LIMA|ENAM|TUJUH|DELAPAN|SEMBILAN;
-([SIL] $first_letter [SIL] $digit [SIL] $digit [SIL] $digit [SIL] $digit [SIL] $digit [SIL] $digit [SIL] $digit [SIL])
+$second_letter =DUA|TIGA;
+$third_letter =SATU|LIMA|ENAM;
+([SIL] $first_letter [SIL] $second_letter [SIL] $third_letter [SIL] $digit [SIL] $digit [SIL] $digit [SIL] $digit [SIL] $digit [SIL])
+
