@@ -27,3 +27,11 @@ targetlist_filename = './txt/testinglist.txt'
 with open(targetlist_filename, 'w') as outfile:
     for line in targetlist_lines:
         outfile.write(line)
+
+# BUILD TEST LIST
+print ('> BUILD TEST LIST...')
+
+trainlist_filename = './txt/testlist.txt'
+with open(trainlist_filename, 'w') as outfile:
+    for line in trainlist_lines:
+        outfile.write(line)
