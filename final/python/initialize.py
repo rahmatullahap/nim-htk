@@ -22,7 +22,7 @@ for filename in os.listdir(directory):
                         unique_labels.append(line_element[2])
 print ('UNIQUE LABELS:', unique_labels)
                         
-# BUILD TARGET LIST
+# BUILD TARGET LIST FOR TRAIN DATA
 print ('> BUILD TARGET LIST...')
 
 sig_directory = './data/train/sig/'
