@@ -1,6 +1,6 @@
 #!/bin/bash
 
-ITERATION=5
+ITERATION=2
 for i in $(seq 1 $ITERATION); do
     i_minus_1=$((i - 1))
 
@@ -19,7 +19,7 @@ for i in $(seq 1 $ITERATION); do
         then
             LABEL=`echo $f | sed 's/model\/proto\/hmm_//'`
             echo "HRest -A -D -T 1 -C config/config2.conf -S txt/trainlist.txt -M  ${MODEL_FOLDER} -H ${PREV_MODEL_FOLDER}/hmm_${LABEL} -L data/train/lab ${LABEL}" 
-            HRest -A -D -T 1 -C config/config2.conf -S txt/trainlist.txt -M $MODEL_FOLDER -H "${PREV_MODEL_FOLDER}/hmm_${LABEL}" -L data/train/lab/ $LABEL
+            HRest -A -D -T 1 -C config/config2.conf -S txt/trainlist.txt -M $MODEL_FOLDER -H "${PREV_MODEL_FOLDER}/hmm_${LABEL}" -H model/hmm0flat/vFloors -L data/train/lab/ $LABEL
         fi
     done
 done

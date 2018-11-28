@@ -1,6 +1,11 @@
-$digit =SATU|DUA|TIGA|EMPAT|LIMA|ENAM|TUJUH|DELAPAN|SEMBILAN|SEPULUH|SEBELAS|BELAS|PULUH|NOL|KOSONG;
+$digit =SATU|DUA|TIGA|EMPAT|LIMA|ENAM|TUJUH|DELAPAN|SEMBILAN|BELAS|PULUH|NOL|KOSONG;
+$two_digits = SEPULUH|SEBELAS;
 $first_letter =SATU|DUA|TIGA;
 $second_letter =DUA|TIGA;
 $third_letter =SATU|LIMA|ENAM;
-([SIL] $first_letter [SIL] $second_letter [SIL] $third_letter [SIL] $digit [SIL] $digit [SIL] $digit [SIL] $digit [SIL] $digit [SIL])
-
+$forth_letter = SATU|SEBELAS|KOSONG|TUJUH|LIMA;
+$fifth_letter = TUJUH | NOL |ENAM |BELAS;
+$sixth_letter = NOL | ENAM | DELAPAN| KOSONG  ;
+$seventh_letter = EMPAT | DELAPAN |SEPULUH| LIMA| TIGA;
+$eight_letter= ENAM | SEMBILAN | PULUH | BELAS;
+(START  <$first_letter>  {SIL}  <$second_letter>  {SIL}  <$third_letter>  {SIL}  <$forth_letter>  {SIL} <$fifth_letter> {SIL}  <$sixth_letter> {SIL} <$seventh_letter> {SIL} [$eight_letter]   END )

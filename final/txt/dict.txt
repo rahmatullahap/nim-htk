@@ -14,3 +14,5 @@ PULUH [puluh] puluh
 NOL [nol] nol
 KOSONG [kosong] kosong
 SIL [sil] sil
+START [sil] sil
+END [sil] sil
