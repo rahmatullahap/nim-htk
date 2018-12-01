@@ -1,5 +1,19 @@
 import os
+import sys
 import fileinput
+
+config = {
+    "num_of_states": 6,
+    "state_component_type": "normal",
+    "num_mixes": 1,
+    "vec_size": 39, 
+}
+
+if len(sys.argv) > 1:
+    config["num_of_states"] = sys.argv[1] 
+    config["state_component_type"] = sys.argv[2]
+    config["num_mixes"] = sys.argv[3] 
+    config["vec_size"] = sys.argv[4] 
 
 unique_labels = []
 
@@ -70,51 +84,79 @@ if protoexist is not True:
 	os.mkdir("model/proto")
 
 
-default_proto_content = """
+
+old_default_proto_content = """
 ~o <VecSize> 39 <MFCC_0_D_A>
-~h "${label_name}"
+~h %s 
 <BeginHMM>
-	<NumStates> 6
-	<State> 2
-		<Mean> 39
-		0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0
-		<Variance> 39
-		1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0
-	<State> 3
-		<Mean> 39
-		0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0
-		<Variance> 39
-		1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0
-	<State> 4
-		<Mean> 39
-		0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0
-		<Variance> 39
-		1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0
-	<State> 5
-		<Mean> 39
-		0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0
-		<Variance> 39
-		1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0
-	<TransP> 6
-		0.0 0.5 0.5 0.0 0.0 0.0
-		0.0 0.4 0.3 0.3 0.0 0.0
-		0.0 0.0 0.4 0.3 0.3 0.0
-		0.0 0.0 0.0 0.4 0.3 0.3
-		0.0 0.0 0.0 0.0 0.5 0.5
-		0.0 0.0 0.0 0.0 0.0 0.0
+<NumStates> %s
+<State> 2
+<Mean> 39
+0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0
+<Variance> 39
+1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0
+<State> 3
+<Mean> 39
+0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0
+<Variance> 39
+1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0
+<State> 4
+<Mean> 39
+0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0
+<Variance> 39
+1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0
+<State> 5
+<Mean> 39
+0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0
+<Variance> 39
+1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0
+<TransP> 6 
+0.0 0.5 0.5 0.0 0.0 0.0 
+0.0 0.4 0.3 0.3 0.0 0.0
+0.0 0.0 0.4 0.3 0.3 0.0
+0.0 0.0 0.0 0.4 0.3 0.3
+0.0 0.0 0.0 0.0 0.5 0.5
+0.0 0.0 0.0 0.0 0.0 0.0
 <EndHMM>
-"""
+""" 
+
+default_proto_content = "~o <VecSize> %s <MFCC_0_D_A>\n" % (config["vec_size"])
+default_proto_content += "~h \"%s\"\n"
+default_proto_content += "<BeginHMM>\n"
+default_proto_content += "<NumStates> %s\n" % (config["num_of_states"])
+
+
+for i in range(2, int(config["num_of_states"])):
+    default_proto_content += "<State> %s\n" % str(i)
+    default_proto_content += "<Mean> %s\n" % str(config["vec_size"]) 
+    default_proto_content += "0.0%s\n" % (" 0.0" * (int(config["vec_size"]) - 1))
+    default_proto_content += "<Variance> %s\n" % str(config["vec_size"]) 
+    default_proto_content += "1.0%s\n" % (" 1.0" * (int(config["vec_size"]) - 1))
+
+default_proto_content += "<TransP> %s\n" % config["num_of_states"]
+for i in range(int(config["num_of_states"])-1):
+    if i == 0:
+        default_proto_content += "0.0 0.5 0.5%s\n" % (" 0.0" * (int(config["num_of_states"]) - 3))
+    elif i == int(config["num_of_states"]) - 2:
+        default_proto_content += "0.0%s 0.5 0.5\n" % (" 0.0" * (int(config["num_of_states"]) - 3))
+    else:
+        default_proto_content += "%s0.4 0.3 0.3%s\n" % ("0.0 " * i, " 0.0" * (int(config["num_of_states"]) - 3 - i))
+
+default_proto_content += "0.0%s\n" % (" 0.0" * (int(config["num_of_states"]) - 1)) 
+
+default_proto_content += "<EndHMM>\n"
+
+print default_proto_content
 
 for label in unique_labels:
     proto_filename = proto_directory + 'hmm_' + label
     
-    proto_content = default_proto_content.replace('${label_name}', label)
+    proto_content = default_proto_content % (label)
     proto_content_lines = proto_content.split('\n')
     
     with open(proto_filename, 'w') as outfile:
-        for line in proto_content_lines[1:]:
+        for line in proto_content_lines[:]:
             outfile.write(line + '\n')
-    
 
 mfccexist = os.path.isdir("data/train/mfcc")
 if mfccexist is not True:
