@@ -8,3 +8,4 @@ final/txt/testlist.txt
 final/data/train/mfcc
 final/mmf/*
 *.swp
+final/txt/hmmlist.txt
